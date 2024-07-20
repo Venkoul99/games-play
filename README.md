@@ -23,7 +23,18 @@ SoftUni React project
 - [x] Service layer architecture
 - [x] Abstract requester
 - [x] Add Game API
+- [x] Pressed practice server
 
 ## 4. Page Implementations
-- [ ] Game List
-- [ ] 
+- [x] Game List
+- [x] Details
+  - [x] Details Link
+  - [x] Details route 
+  - [x] Api function - getOne (to get one game)
+- [x] Home - Latest Games
+## 5. Comments
+- [x] Create service for nested resourc `comments`
+- [x] Post comment to server
+- [x] Read comments from server
+- [x] Update comments in the component
+- [x] Clear form
