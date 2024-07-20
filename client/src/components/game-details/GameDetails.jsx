@@ -47,7 +47,7 @@ export default function GameDetails() {
                 <p className="type">{game.category}</p>
             </div>
 
-            <p className="text">{game.description}</p>
+            <p className="text">{game.summary}</p>
 
             
             <div className="details-comments">
