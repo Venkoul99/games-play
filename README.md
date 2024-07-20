@@ -8,7 +8,8 @@ SoftUni React project
 - [x] Add softuni practise server
 - [x] Add base vite react project as client
 - [x] Cleanup client
-- [ ] Add project resources
+- [x] Add project resources
+- [x] Convert HTML to JSX
 - [ ] Separate html into components
 
 ## 2. React Router
