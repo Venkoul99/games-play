@@ -17,4 +17,12 @@ SoftUni React project
 - [x] Install react-router-dom
 - [x] Setup react-router-dom
 - [x] Add routes in App.jsx
-- [ ] Add links in the navigation
+- [x] Add links in the navigation
+
+## 3. Create Service layer
+- [x] Service layer architecture
+- [x] Abstract requester
+
+## 4. Page Implementations
+- [ ] Game List
+- [ ] 
