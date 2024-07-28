@@ -39,7 +39,7 @@ SoftUni React project
 - [x] Update comments in the component
 - [x] Clear form
 ## 6. API Hooks
-- [ ] Form Hook
+- [x] Form Hook
 - [ ] GameApi Hooks
 - [ ] Comments Hooks
 ## 7. Authentication
@@ -55,3 +55,4 @@ SoftUni React project
 - [ ] Create game
   - [ ] Api function
   - [ ] Hook
+- [ ] Latest games 
