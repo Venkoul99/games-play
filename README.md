@@ -33,8 +33,25 @@ SoftUni React project
   - [x] Api function - getOne (to get one game)
 - [x] Home - Latest Games
 ## 5. Comments
-- [x] Create service for nested resourc `comments`
+- [x] Create service for nested resource `comments`
 - [x] Post comment to server
 - [x] Read comments from server
 - [x] Update comments in the component
 - [x] Clear form
+## 6. API Hooks
+- [ ] Form Hook
+- [ ] GameApi Hooks
+- [ ] Comments Hooks
+## 7. Authentication
+- [ ] Auth API
+- [ ] Auth API Hook
+- [ ] Auth state & context
+- [ ] Login
+- [ ] Register
+- [ ] Logout
+- [ ] Navigation
+## 8. UI Implementation
+- [ ] Dynamic navigation
+- [ ] Create game
+  - [ ] Api function
+  - [ ] Hook
