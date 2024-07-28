@@ -1,98 +1,87 @@
-import { useEffect, useState } from "react";
-import gamesApi from "../../api/games-api";
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 import commentsApi from "../../api/comments-api";
+import { useGetOneGames } from "../../hooks/useGames";
 
 export default function GameDetails() {
-    const [game, setGame] = useState({});
-    const [comment, setComment] = useState('');
-    const [username, setUsername] = useState('');
-    const {gameId} = useParams();
+  const { gameId } = useParams();
+  const [game, setGame] = useGetOneGames(gameId);
+  const [comment, setComment] = useState("");
+  const [username, setUsername] = useState("");
 
+  const commentSubmitHandler = async (e) => {
+    e.preventDefault();
 
-    useEffect(() => {
-        (async () => {
-            const result = await gamesApi.getOne(gameId);
+    const newComment = await commentsApi.create(gameId, username, comment);
+    //TODO: this should be fixed
+    setGame((prevState) => ({
+      ...prevState,
+      comments: {
+        ...prevState.comments,
+        [newComment._id]: newComment,
+      },
+    }));
 
-            setGame(result);
-        })();
-    }, []);
+    setUsername("");
+    setComment("");
+  };
 
-    const commentSubmitHandler = async (e) => {
-        e.preventDefault();
+  return (
+    <section id="game-details">
+      <h1>Game Details</h1>
+      <div className="info-section">
+        <div className="game-header">
+          <img className="game-img" src={game.imageUrl} />
+          <h1>{game.title}</h1>
+          <span className="levels">MaxLevel: {game.maxLevel}</span>
+          <p className="type">{game.category}</p>
+        </div>
 
-        const newComment = await commentsApi.create(gameId, username, comment)
-        //TODO: this should be fixed
-        setGame(prevState => ({
-            ...prevState,
-            comments: {
-                ...prevState.comments,
-                [newComment._id]: newComment
-            }
-        }));
+        <p className="text">{game.summary}</p>
 
-        setUsername('');
-        setComment('');
-    }
+        <div className="details-comments">
+          <h2>Comments:</h2>
+          <ul>
+            {Object.keys(game.comments || {}).length > 0 ? (
+              Object.values(game.comments).map((comment) => (
+                <li key={comment._id} className="comment">
+                  <p>
+                    {comment.username}: {comment.text}
+                  </p>
+                </li>
+              ))
+            ) : (
+              <p className="no-comment">No comments.</p>
+            )}
+          </ul>
+        </div>
 
-    return(
-        <section id="game-details">
-        <h1>Game Details</h1>
-        <div className="info-section">
-
-            <div className="game-header">
-                <img className="game-img" src={game.imageUrl} />
-                <h1>{game.title}</h1>
-                <span className="levels">MaxLevel: {game.maxLevel}</span>
-                <p className="type">{game.category}</p>
-            </div>
-
-            <p className="text">{game.summary}</p>
-
-            
-            <div className="details-comments">
-                <h2>Comments:</h2>
-                <ul>
-                    {Object.keys(game.comments || {}).length > 0
-                        ? Object.values(game.comments).map(comment => (
-                            <li key={comment._id} className="comment">
-                            <p>{comment.username}: {comment.text}</p>
-                            </li>
-                    ))
-                        : <p className="no-comment">No comments.</p>
-                    }
-                </ul>
-                   
-                
-            </div>
-
-           
-            {/* <div className="buttons">
+        {/* <div className="buttons">
                 <a href="#" className="button">Edit</a>
                 <a href="#" className="button">Delete</a>
             </div> */}
-        </div>
+      </div>
 
-        <article className="create-comment">
-            <label>Add new comment:</label>
-            <form className="form" onSubmit={commentSubmitHandler}>
-                <input
-                type="text"
-                placeholder="John Doe"
-                name="username"
-                onChange={(e) => setUsername(e.target.value)}
-                value={username} />
+      <article className="create-comment">
+        <label>Add new comment:</label>
+        <form className="form" onSubmit={commentSubmitHandler}>
+          <input
+            type="text"
+            placeholder="John Doe"
+            name="username"
+            onChange={(e) => setUsername(e.target.value)}
+            value={username}
+          />
 
-                <textarea
-                name="comment"
-                placeholder="Comment......"
-                onChange={(e) => setComment(e.target.value)}
-                value={comment}
-                ></textarea>
-                <input className="btn submit" type="submit" value="Add Comment" />
-            </form>
-        </article>
-
+          <textarea
+            name="comment"
+            placeholder="Comment......"
+            onChange={(e) => setComment(e.target.value)}
+            value={comment}
+          ></textarea>
+          <input className="btn submit" type="submit" value="Add Comment" />
+        </form>
+      </article>
     </section>
-    );
+  );
 }
