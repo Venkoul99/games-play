@@ -40,10 +40,11 @@ SoftUni React project
 - [x] Clear form
 ## 6. API Hooks
 - [x] Form Hook
-- [ ] GameApi Hooks
+- [x] GameApi Hooks
 - [ ] Comments Hooks
 ## 7. Authentication
 - [ ] Auth API
+  - [ ] Login
 - [ ] Auth API Hook
 - [ ] Auth state & context
 - [ ] Login
