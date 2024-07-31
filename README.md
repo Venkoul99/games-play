@@ -59,7 +59,7 @@ SoftUni React project
 - [ ] Logout
 - [ ] Authorized Requests
 ## 8. UI Implementation
-- [ ] Dynamic navigation
+- [x] Dynamic navigation
 - [ ] Create game
   - [ ] Api function
   - [ ] Hook
