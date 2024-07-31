@@ -43,14 +43,20 @@ SoftUni React project
 - [x] GameApi Hooks
 - [ ] Comments Hooks
 ## 7. Authentication
-- [ ] Auth API
-  - [ ] Login
+- [x] Auth API
+  - [x] Login
+  - [ ] Register
+  - [ ] Logout
 - [ ] Auth API Hook
-- [ ] Auth state & context
-- [ ] Login
+  - [x] Login
+  - [ ] Register
+  - [ ] Logout 
+- [x] Auth state & context
+- [x] Token management
+- [x] Login
 - [ ] Register
 - [ ] Logout
-- [ ] Navigation
+- [ ] Authorized Requests
 ## 8. UI Implementation
 - [ ] Dynamic navigation
 - [ ] Create game
