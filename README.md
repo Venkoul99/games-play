@@ -57,10 +57,10 @@ SoftUni React project
 - [x] Register
   - [x] Add form validation 
 - [ ] Logout
-- [ ] Authorized Requests
+- [x] Authorized Requests
 ## 8. UI Implementation
 - [x] Dynamic navigation
-- [ ] Create game
-  - [ ] Api function
-  - [ ] Hook
+- [x] Create game
+  - [x] Api function
+  - [x] Hook
 - [ ] Latest games 
