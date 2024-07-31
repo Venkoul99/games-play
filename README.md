@@ -45,16 +45,16 @@ SoftUni React project
 ## 7. Authentication
 - [x] Auth API
   - [x] Login
-  - [ ] Register
+  - [x] Register
   - [ ] Logout
 - [ ] Auth API Hook
   - [x] Login
-  - [ ] Register
+  - [x] Register
   - [ ] Logout 
 - [x] Auth state & context
 - [x] Token management
 - [x] Login
-- [ ] Register
+- [x] Register
 - [ ] Logout
 - [ ] Authorized Requests
 ## 8. UI Implementation
