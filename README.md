@@ -55,6 +55,7 @@ SoftUni React project
 - [x] Token management
 - [x] Login
 - [x] Register
+  - [x] Add form validation 
 - [ ] Logout
 - [ ] Authorized Requests
 ## 8. UI Implementation
